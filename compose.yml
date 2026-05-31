@@ -5,10 +5,21 @@ services:
    image: achyuty/java_app:db
    ports:
      - "3306:3306"
+   deploy:
+     replicas: 2
+   network:
+     - mynetwork1
 
  application:
    image: achyuty/java_app:app
    ports:
      - "2222:8080"
+   deploy:
+     replicas: 2
+   network:
+     - mynetwork1
    depends_on:
      - "devopsdb"
+networks:
+  mynetwork1:
+    driver: overlay
