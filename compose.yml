@@ -7,7 +7,7 @@ services:
      - "3306:3306"
    deploy:
      replicas: 2
-   network:
+   networks:
      - mynetwork1
 
  application:
@@ -16,7 +16,7 @@ services:
      - "2222:8080"
    deploy:
      replicas: 2
-   network:
+   networks:
      - mynetwork1
    depends_on:
      - "devopsdb"
