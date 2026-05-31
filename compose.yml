@@ -2,13 +2,13 @@
 version: "3"
 services:
  devopsdb:
-   image: shaikmustafa/harikanew:dbimage
+   image: achyuty/java_app:db
    ports:
      - "3306:3306"
 
  application:
-   image: shaikmustafa/harikanew:appimage
+   image: achyuty/java_app:app
    ports:
-     - "1111:8080"
+     - "2222:8080"
    depends_on:
      - "devopsdb"
